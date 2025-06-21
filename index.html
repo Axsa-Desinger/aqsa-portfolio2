@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aqsa Portfolio</title>
+  <style>
+    :root {
+      --card: rgba(18, 18, 18, 0.9);
+      --accent: #14532d;
+      --text: #f0f0f0;
+      --highlight: #22c55e;
+      --bg: url("bg.jpg") no-repeat center center fixed;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      background-size: cover;
+      color: var(--text);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.light-mode {
+      --card: rgba(255, 255, 255, 0.9);
+      --accent: #d1fae5;
+      --text: #111;
+      --highlight: #16a34a;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: var(--accent);
+      color: black;
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      padding: 14px 0;
+      gap: 40px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 12px;
+      right: 20px;
+      background: var(--highlight);
+      color: black;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      border-left: 6px solid var(--highlight);
+      padding-left: 14px;
+      color: var(--highlight);
+      margin-bottom: 16px;
+    }
+
+    .section-img {
+      width: 220px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border: 2px solid var(--accent);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      background-color: #111;
+      border: 1px solid var(--highlight);
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    form button {
+      background-color: var(--accent);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #1a643b;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: var(--highlight);
+      color: black;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .contact-links a {
+      color: var(--highlight);
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 24px;
+      color: #aaa;
+      margin-top: 60px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+
+  <header>
+    Aqsa's Creative Portfolio
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#graphics">Graphics</a>
+    <a href="#typing">Typing</a>
+    <a href="#cv">CV Design</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="about.jpg" alt="Aqsa Photo" class="section-img" />
+    <p>I’m Aqsa Rani, a software engineering student with a love for creative work like graphic designing, typing, and resume making.</p>
+  </section>
+
+  <section id="graphics">
+    <h2>Graphic Design Tutorials</h2>
+    <p>Learn how I design logos and posters using Canva and Photoshop.</p>
+    <img src="design1.jpg" alt="Graphic Sample" class="section-img" />
+  </section>
+
+  <section id="typing">
+    <h2>Typing Tips</h2>
+    <p>Here are my top tips for improving both English and Urdu typing speed.</p>
+    <img src="typing.jpg" alt="Typing Image" class="section-img" />
+  </section>
+
+  <section id="cv">
+    <h2>CV / Resume Designing</h2>
+    <p>I design professional resumes using Canva and MS Word.</p>
+    <img src="cvsample.jpg" alt="CV Sample" class="section-img" />
+    <br>
+    <a class="download-btn" href="Aqsa_CV.pdf" download>📄 Download My CV</a>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="design1.jpg" alt="Design 1">
+      <img src="design2.jpg" alt="Design 2">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Have questions or want to work with me? Send me a message or use the links below:</p>
+
+    <form onsubmit="return false;">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="contact-links">
+      <a href="mailto:aqsarani1144@gmail.com">📧 aqsarani1144@gmail.com</a>
+      <a href="tel:03366596401">📞 0336-6596401</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Aqsa Rani — All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light-mode");
+    }
+  </script>
+
+</body>
+</html>
